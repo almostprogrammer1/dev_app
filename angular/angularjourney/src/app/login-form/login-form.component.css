@@ -1,0 +1,59 @@
+/* Domyślny wygląd pola logowania */
+.mat-card {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Styl dla tytułu */
+.mat-card-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Styl dla treści */
+.mat-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styl dla formularza */
+.mat-form-field {
+    width: 100%;
+}
+
+/* Styl dla przycisku */
+.mat-card-actions {
+    display: flex;
+    justify-content: center;
+}
+
+/* Styl dla przycisku zatwierdzania */
+button.mat-raised-button {
+    width: 100%;
+}
+
+/* Responsywne style dla różnych rozdzielczości */
+/* Dla małych ekranów */
+@media screen and (max-width: 600px) {
+    .mat-card {
+        max-width: 300px;
+    }
+}
+
+/* Dla średnich ekranów */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .mat-card {
+        max-width: 600px;
+    }
+}
+
+/* Dla dużych ekranów */
+@media screen and (min-width: 1025px) {
+    .mat-card {
+        max-width: 800px;
+    }
+}
+
