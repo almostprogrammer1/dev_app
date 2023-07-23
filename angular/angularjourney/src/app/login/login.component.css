@@ -1,0 +1,25 @@
+.login-card {
+    max-width: 400px;
+    margin: 12em auto;
+    text-align: center;
+    position: relative;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(128, 42, 130, 1) 56%, rgba(0, 212, 255, 1) 100%);
+    color: white;
+  }
+  
+  .login-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .login-form-field {
+    display: block;
+    margin-bottom: 1em;
+  }
+  
+  .login-button {
+    margin-top: 1em;
+  }
+  

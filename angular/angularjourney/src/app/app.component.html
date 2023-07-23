@@ -1,1 +1,55 @@
-<app-login-form></app-login-form>
+<mat-toolbar color="primary" class="expanded-toolbar">
+    <span>
+        <button mat-button routerLink="/">{{title}}</button>
+        <button mat-button routerLink="/"><mat-icon>home</mat-icon></button>
+    </span>
+    <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+        <button mat-button class="login-button" routerLink="/login" *ngIf="!isAuthenticated">
+            <mat-icon>power_settings_new</mat-icon>
+            Zaloguj się
+        </button>
+        <button mat-button *ngIf="isAuthenticated">
+            <mat-icon>exit_to_app</mat-icon>
+            Wyloguj się
+        </button>
+    </div>
+</mat-toolbar>
+<app-home></app-home>
+<div class="login-container">
+    <div class="login-card">
+        <app-login></app-login>
+    </div>
+    <div class="login-card">
+        <app-google-login></app-google-login>
+    </div>
+</div>
+<mat-menu>
+    <button mat-menu-item routerLink="/">
+        <mat-icon>home</mat-icon>
+        Home
+    </button>
+    <button mat-menu-item routerLink="/login" *ngIf="!isAuthenticated">
+        <mat-icon>power_settings_new</mat-icon>
+        Zaloguj się
+    </button>
+    <button mat-menu-item *ngIf="isAuthenticated">
+        <mat-icon>exit_to_app</mat-icon>
+        Wyloguj się
+    </button> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mat-menu>

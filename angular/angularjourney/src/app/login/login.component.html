@@ -1,0 +1,23 @@
+<mat-card class="login-card">
+    <mat-card-content class="login-content">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <h2>Zajerestuj się e-mailem</h2>
+            <mat-error *ngIf="loginInvalid">
+                Zły login lub hasło
+            </mat-error>
+            <mat-form-field class="login-form-field">
+                <input matInput placeholder="E-mail" formControlName="username" required>
+                <mat-error>
+                    Proszę podać poprawny adres email
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="login-form-field">
+                <input matInput type="password" placeholder="hasło" formControlName="password" required>
+                <mat-error>
+                    Proszę podać poprawne hasło
+                </mat-error>
+            </mat-form-field>
+            <button mat-raised-button color="primary" class="login-button">Utwórz konto</button>
+        </form>
+    </mat-card-content>
+</mat-card>

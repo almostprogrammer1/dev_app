@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angularjourney';
+  title = 'Apka do rypania loch :D';
+  isAuthenticated: boolean = false;
 }
