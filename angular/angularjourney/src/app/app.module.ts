@@ -21,16 +21,12 @@ import { MatOptionModule } from '@angular/material/core';
 
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { GoogleLoginComponent } from './google-login/google-login.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    LoginComponent,
-    GoogleLoginComponent
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
