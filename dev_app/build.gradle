@@ -2,13 +2,35 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.1.2'
 	id 'io.spring.dependency-management' version '1.1.2'
+	id 'groovy'
+	id 'jacoco'
 }
 
 group = 'com.dev_app'
 version = '0.0.1-SNAPSHOT'
 
+jacoco {
+	toolVersion = "0.8.11"
+	reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
+}
+
+jacocoTestReport {
+	reports {
+		xml.required = false
+		csv.required = false
+		html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+	}
+}
+
 java {
 	sourceCompatibility = '17'
+}
+
+test {
+	finalizedBy jacocoTestReport // report is always generated after tests run
+}
+jacocoTestReport {
+	dependsOn test // tests are required to run before generating the report
 }
 
 configurations {
@@ -22,6 +44,8 @@ repositories {
 }
 
 dependencies {
+	testImplementation 'org.codehaus.groovy:groovy-all:3.0.8'
+	testImplementation 'org.spockframework:spock-core:2.0-groovy-3.0'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-mail'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
