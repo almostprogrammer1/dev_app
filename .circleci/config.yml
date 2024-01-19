@@ -1,6 +1,6 @@
 # Java Gradle CircleCI 2.0 configuration file
 # See: https://circleci.com/docs/language-java/
-version: 2
+version: 2.1
 ###
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
@@ -59,3 +59,17 @@ jobs:
           when: always
       - store_test_results:
           path: ~/test-results
+
+      - checkout
+      - run:
+          name: Analyze on SonarCloud
+          command: |
+            cd ~/repo/dev_app/
+            dir
+            gradle build sonar -Dsonar.host.url=https://sonarcloud.io;
+
+workflows:
+   main:
+    jobs:
+      - build:
+          context: SonarCloud
