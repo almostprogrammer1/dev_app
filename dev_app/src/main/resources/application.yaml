@@ -12,7 +12,9 @@ spring:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
-
+springdoc:
+  swagger-ui:
+    disable-swagger-default-url: true
 application:
   security:
     jwt:
